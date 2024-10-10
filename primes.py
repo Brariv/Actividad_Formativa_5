@@ -1,8 +1,9 @@
-# Brandon Rivera - 
+# Brandon Rivera - 23088
 # Nils Muralles - 23727
 # Matemática Discreta - Sección 30
 
 import math
+import numpy as np
 
 def prime_test_1(n):
     if n == 1:
@@ -94,59 +95,3 @@ def bezout(a, b):
         return bezout_quotients
     else: 
         return bezout_quotients * -1
-
-def main():
-    while True:
-
-        print("Seleccione una opción:")
-        print("1. Algoritmo de la criba")
-        print("2. Prueba de primalidad")
-        print("3. Algoritmo de Euclides")
-        print("4. Algoritmo de Bézout")
-        print("5. Salir")
-        option = input("Opción: ")
-
-        while True:
-            try :
-                option = int(option)
-                break
-            except ValueError:
-                print("Por favor ingrese un número entero")
-                option = input("Opción: ")
-        
-        if option == 1:
-            n = int(input("Ingrese un número: "))
-            print("Los números primos menores a", n, "son:")
-            print(criba(n))
-
-        elif option == 2:
-            n = int(input("Ingrese un número: "))
-            isprime = is_prime(n)
-            prime = isprime[0]
-            number = isprime[1]
-
-            if prime:
-                print("El número", n, " es primo")
-            else:
-                print("El número", n, "no es primo, pues lo divide", number)
-
-        elif option == 3:
-            x = int(input("Ingrese el primer número: "))
-            y = int(input("Ingrese el segundo número: "))
-            print("El mcd de ", x, "y", y,  " es:", euclidean(x, y))
-
-        elif option == 4:
-            a = int(input("Ingrese el primer número: "))
-            b = int(input("Ingrese el segundo número: "))
-            print("Los coeficientes de Bezout de ", a, "y", b ,"son", bezout(a, b))
-
-        elif option == 5:
-            print("Saliendo...")
-            break
-
-        else:
-            print("Por favor ingrese una opción válida")
-            continue
-        
-
-main()
